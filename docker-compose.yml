@@ -1,0 +1,14 @@
+version: '3'
+services:
+
+  app:
+    image: deadcode-img:latest
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mongodb
+
+  mongodb:
+    image: 'bitnami/mongodb:latest'
+    ports:
+      - "27017:27017/tcp"

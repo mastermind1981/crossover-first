@@ -1,0 +1,15 @@
+spring:
+  profiles.active: development
+---
+
+spring:
+    profiles: production
+server:
+    port: 29011
+
+---
+spring:
+    profiles: development
+server:
+    address: 127.0.0.1
+    port: 8080
