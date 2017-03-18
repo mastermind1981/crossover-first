@@ -84,7 +84,7 @@ public class DeadcodeDetectorProcessorProvider implements DeadcodeDetectorProces
 
     private SourceRepository callAnalyzers(final SourceRepository entity) {
         final Map<DeadcodeType, List<String>> result = new HashMap<>();
-        UnderstandDatabase db = factory.getDatabase("src/main/resources/analyze/repository/db.udb");
+        UnderstandDatabase db = factory.getDatabase(entity.getUdbPath());
             analyzers.forEach(a -> {
                 final PairTuple<DeadcodeType, List<String>> analyzed = a.analyze(db);
                 result.put(analyzed.getX(), analyzed.getY());
